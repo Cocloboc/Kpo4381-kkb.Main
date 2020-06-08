@@ -49,6 +49,7 @@ namespace Kpo4381.kkb.Main
 
         private void mnOpenCompany_Click(object sender, EventArgs e)
         {
+            //lab1
             FrmCompany frmCompany = new FrmCompany();
             Company company = (bsCompanies.Current as Company);
             frmCompany.SetEmployee(company);
