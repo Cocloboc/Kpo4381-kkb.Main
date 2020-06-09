@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kpo4381.kkb.Lib
+namespace Kpo4381.Lib
 {
     public class Company
     {

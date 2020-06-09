@@ -1,4 +1,4 @@
-﻿using Kpo4381.kkb.Lib;
+﻿using Kpo4381.Lib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

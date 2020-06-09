@@ -32,9 +32,10 @@
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.nmExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvCompanies = new System.Windows.Forms.DataGridView();
             this.mmCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenCompany = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvCompanies = new System.Windows.Forms.DataGridView();
+            this.mmSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanies)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +45,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mmFile,
-            this.mmCompany});
+            this.mmCompany,
+            this.mmSettings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 30);
@@ -63,26 +65,16 @@
             // nmExit
             // 
             this.nmExit.Name = "nmExit";
-            this.nmExit.Size = new System.Drawing.Size(224, 26);
+            this.nmExit.Size = new System.Drawing.Size(150, 26);
             this.nmExit.Text = "Выход";
             this.nmExit.Click += new System.EventHandler(this.nmExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnOpen.Size = new System.Drawing.Size(150, 26);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
-            // 
-            // dgvCompanies
-            // 
-            this.dgvCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCompanies.Location = new System.Drawing.Point(12, 31);
-            this.dgvCompanies.Name = "dgvCompanies";
-            this.dgvCompanies.RowHeadersWidth = 51;
-            this.dgvCompanies.RowTemplate.Height = 24;
-            this.dgvCompanies.Size = new System.Drawing.Size(776, 407);
-            this.dgvCompanies.TabIndex = 1;
             // 
             // mmCompany
             // 
@@ -98,6 +90,23 @@
             this.mnOpenCompany.Size = new System.Drawing.Size(282, 26);
             this.mnOpenCompany.Text = "Открыть данные компании";
             this.mnOpenCompany.Click += new System.EventHandler(this.mnOpenCompany_Click);
+            // 
+            // dgvCompanies
+            // 
+            this.dgvCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompanies.Location = new System.Drawing.Point(12, 31);
+            this.dgvCompanies.Name = "dgvCompanies";
+            this.dgvCompanies.RowHeadersWidth = 51;
+            this.dgvCompanies.RowTemplate.Height = 24;
+            this.dgvCompanies.Size = new System.Drawing.Size(776, 407);
+            this.dgvCompanies.TabIndex = 1;
+            // 
+            // mmSettings
+            // 
+            this.mmSettings.Name = "mmSettings";
+            this.mmSettings.Size = new System.Drawing.Size(109, 26);
+            this.mmSettings.Text = "3&.Настройки";
+            this.mmSettings.Click += new System.EventHandler(this.mmSettings_Click);
             // 
             // FrmMain
             // 
@@ -126,6 +135,7 @@
         private System.Windows.Forms.DataGridView dgvCompanies;
         private System.Windows.Forms.ToolStripMenuItem mmCompany;
         private System.Windows.Forms.ToolStripMenuItem mnOpenCompany;
+        private System.Windows.Forms.ToolStripMenuItem mmSettings;
     }
 }
 

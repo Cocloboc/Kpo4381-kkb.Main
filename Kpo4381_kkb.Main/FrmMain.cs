@@ -8,7 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Kpo4381.kkb.Lib;
+using Kpo4381.Utility;
+using Kpo4381.Lib;
 
 namespace Kpo4381.kkb.Main
 {
@@ -31,18 +32,19 @@ namespace Kpo4381.kkb.Main
         {
             try
             {
-                MockCompanyListCommand mock = new MockCompanyListCommand();
-                mock.Execute();
+                //ICompanyListLoader loader = new CompanyListSplitFileLoader(AppGlobalSettings.DataFileName);
+                ICompanyListLoader loader = new CompanyTestListLoader();
+                companyList = loader.CompanyList;
                 bsCompanies.DataSource = companyList;
                 dgvCompanies.DataSource = bsCompanies;
             }
             catch (NotImplementedException ex)
             {
-                MessageBox.Show("Ошибка №1: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ошибка №2: " + ex.Message);
+                MessageBox.Show(ex.Message);
                 LogUtility.ErrorLog(ex.Message);
             }
         }
@@ -54,6 +56,11 @@ namespace Kpo4381.kkb.Main
             Company company = (bsCompanies.Current as Company);
             frmCompany.SetEmployee(company);
             frmCompany.ShowDialog();
+        }
+
+        private void mmSettings_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("logPath: " + AppGlobalSettings.LogPath + " DataFilePath: " + AppGlobalSettings.DataFileName);
         }
     }
 }

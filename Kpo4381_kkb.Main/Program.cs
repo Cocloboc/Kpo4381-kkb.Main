@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kpo4381.Lib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +15,11 @@ namespace Kpo4381.kkb.Main
         [STAThread]
         static void Main()
         {
+            AppGlobalSettings.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
+            
         }
     }
 }

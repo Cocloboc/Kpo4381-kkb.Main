@@ -4,28 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kpo4381.kkb.Lib
+namespace Kpo4381.Lib
 {
-    public class MockCompanyListCommand
+    public class CompanyTestListLoader: ICompanyListLoader
     {
-        public MockCompanyListCommand()
+        public CompanyTestListLoader()
         {
-            this._companyList = null;
-        }
-
-        private readonly string _dataFileName = "";
-        private List<Company> _companyList = null;
-
-        public List<Company> companyList
-        {
-            get { return _companyList; }
-        }
-
-        public void Execute()
-        {
-            throw new NotImplementedException();
-            throw new Exception("Неправильные входные данные");
-            {              
+            this._companyList = new List<Company>();
+            {
                 Company company = new Company()
                 {
                     Name = "Oracle",
@@ -33,7 +19,7 @@ namespace Kpo4381.kkb.Lib
                     Sales = 2488000000,
                     MarketShare = 31.1d
                 };
-                companyList.Add(company);
+                _companyList.Add(company);
             }
             {
                 Company company = new Company()
@@ -43,7 +29,7 @@ namespace Kpo4381.kkb.Lib
                     Sales = 2392000000,
                     MarketShare = 29.9d
                 };
-                companyList.Add(company);
+                _companyList.Add(company);
             }
             {
                 Company company = new Company()
@@ -53,8 +39,21 @@ namespace Kpo4381.kkb.Lib
                     Sales = 1048000000,
                     MarketShare = 13.1d
                 };
-                companyList.Add(company);
+                _companyList.Add(company);
             }
+        }
+
+        private readonly string _dataFileName = "";
+        private List<Company> _companyList = null;
+        private LoadStatus _status = LoadStatus.None;
+        public LoadStatus status
+        {
+            get { return _status; }
+        }
+
+        public List<Company> CompanyList
+        {
+            get { return _companyList; }
         }
     }
 }
