@@ -31,10 +31,10 @@ namespace Kpo4381.Lib
             get { return _status; }
         }
 
-        public CompanyListSplitFileLoader(string path)
+        public CompanyListSplitFileLoader()
         {
             _companyList = new List<Company>();
-            _dataFileName = path;
+            _dataFileName = AppGlobalSettings.DataFileName;
             ReadFile();
         }
         private void ReadFile()

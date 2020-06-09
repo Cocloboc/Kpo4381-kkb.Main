@@ -17,10 +17,23 @@ namespace Kpo4381.kkb.Main
     {
         private List<Company> companyList = null;
         private BindingSource bsCompanies = new BindingSource();
+        private ICompanyFactory factory;
 
         public FrmMain()
         {
             InitializeComponent();
+            switch (AppGlobalSettings.CompanyFactory)
+            {
+                case ("test"):
+                    factory = new CompanyTestFactory();
+                    break;
+                case ("split"):
+                    factory = new CompanySplitFileFactory();
+                    break;
+                default:
+                    factory = new CompanyTestFactory();
+                    break;
+            }
         }
 
         private void nmExit_Click(object sender, EventArgs e)
@@ -33,7 +46,7 @@ namespace Kpo4381.kkb.Main
             try
             {
                 //ICompanyListLoader loader = new CompanyListSplitFileLoader(AppGlobalSettings.DataFileName);
-                ICompanyListLoader loader = new CompanyTestListLoader();
+                ICompanyListLoader loader = factory.CreateLoader();
                 companyList = loader.CompanyList;
                 bsCompanies.DataSource = companyList;
                 dgvCompanies.DataSource = bsCompanies;

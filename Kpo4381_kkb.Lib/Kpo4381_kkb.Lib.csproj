@@ -43,9 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="source\Common\AppGlobalSettings.cs" />
+    <Compile Include="source\Helpers\CompanySplitFileFactory.cs" />
+    <Compile Include="source\Helpers\CompanyTestFactory.cs" />
+    <Compile Include="source\Helpers\ICompanyFactory.cs" />
+    <Compile Include="source\Helpers\CompanyListSplitFileSaver.cs" />
+    <Compile Include="source\Helpers\CompanyTestListSaver.cs" />
     <Compile Include="source\Helpers\ICompanyListLoader.cs" />
     <Compile Include="source\Helpers\CompanyListSplitFileLoader.cs" />
     <Compile Include="source\Helpers\CompanyTestListLoader.cs" />
+    <Compile Include="source\Helpers\ICompanyListSaver.cs" />
     <Compile Include="source\Log\LogUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source\Model\Company.cs" />
