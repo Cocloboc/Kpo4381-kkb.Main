@@ -34,10 +34,13 @@
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.mmCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenCompany = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvCompanies = new System.Windows.Forms.DataGridView();
             this.mmSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvCompanies = new System.Windows.Forms.DataGridView();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.LoadFileStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanies)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -91,6 +94,13 @@
             this.mnOpenCompany.Text = "Открыть данные компании";
             this.mnOpenCompany.Click += new System.EventHandler(this.mnOpenCompany_Click);
             // 
+            // mmSettings
+            // 
+            this.mmSettings.Name = "mmSettings";
+            this.mmSettings.Size = new System.Drawing.Size(109, 26);
+            this.mmSettings.Text = "3&.Настройки";
+            this.mmSettings.Click += new System.EventHandler(this.mmSettings_Click);
+            // 
             // dgvCompanies
             // 
             this.dgvCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -101,18 +111,28 @@
             this.dgvCompanies.Size = new System.Drawing.Size(776, 407);
             this.dgvCompanies.TabIndex = 1;
             // 
-            // mmSettings
+            // statusStrip1
             // 
-            this.mmSettings.Name = "mmSettings";
-            this.mmSettings.Size = new System.Drawing.Size(109, 26);
-            this.mmSettings.Text = "3&.Настройки";
-            this.mmSettings.Click += new System.EventHandler(this.mmSettings_Click);
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.LoadFileStatusLabel});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 447);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(800, 24);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // LoadFileStatusLabel
+            // 
+            this.LoadFileStatusLabel.Name = "LoadFileStatusLabel";
+            this.LoadFileStatusLabel.Size = new System.Drawing.Size(0, 18);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 471);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvCompanies);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -121,6 +141,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanies)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +158,8 @@
         private System.Windows.Forms.ToolStripMenuItem mmCompany;
         private System.Windows.Forms.ToolStripMenuItem mnOpenCompany;
         private System.Windows.Forms.ToolStripMenuItem mmSettings;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel LoadFileStatusLabel;
     }
 }
 

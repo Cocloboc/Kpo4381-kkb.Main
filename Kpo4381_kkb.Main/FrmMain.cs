@@ -19,8 +19,10 @@ namespace Kpo4381.kkb.Main
         private BindingSource bsCompanies = new BindingSource();
 
         public FrmMain()
-        {
+        {          
             InitializeComponent();
+            IoCLoader.container.Resolve<ICompanyListLoader>().SetOnStatusChanged(updateStatusLabel);
+
         }
 
         private void nmExit_Click(object sender, EventArgs e)
@@ -28,12 +30,17 @@ namespace Kpo4381.kkb.Main
             Close();
         }
 
+        private void updateStatusLabel(LoadStatus status)
+        {
+            LoadFileStatusLabel.Text = status.ToString();
+        }
         private void mnOpen_Click(object sender, EventArgs e)
         {
             try
             {
                 //ICompanyListLoader loader = new CompanyListSplitFileLoader(AppGlobalSettings.DataFileName);
                 ICompanyListLoader loader = IoCLoader.container.Resolve<ICompanyListLoader>();
+                loader.ReadFile();
                 companyList = loader.CompanyList;
                 bsCompanies.DataSource = companyList;
                 dgvCompanies.DataSource = bsCompanies;
@@ -60,7 +67,8 @@ namespace Kpo4381.kkb.Main
 
         private void mmSettings_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("logPath: " + AppGlobalSettings.LogPath + " DataFilePath: " + AppGlobalSettings.DataFileName);
+            //MessageBox.Show("logPath: " + AppGlobalSettings.LogPath + " DataFilePath: " + AppGlobalSettings.DataFileName);
+            MessageBox.Show(IoCLoader.container.Resolve<ICompanyListLoader>().OnStatusChanged.ToString());
         }
     }
 }

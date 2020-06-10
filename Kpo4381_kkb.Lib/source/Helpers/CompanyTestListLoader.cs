@@ -6,9 +6,18 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.Lib
 {
-    public class CompanyTestListLoader: ICompanyListLoader
+    public class CompanyTestListLoader : ICompanyListLoader
     {
-        public CompanyTestListLoader()
+        public CompanyTestListLoader(Delegates.OnStatusChangedDelegate onStatusChanged)
+        {
+        }
+
+        private readonly string _dataFileName = "";
+        private List<Company> _companyList = null;
+        private LoadStatus _status = LoadStatus.None;
+        private Delegates.OnStatusChangedDelegate onStatusChanged = null;
+
+        public void ReadFile()
         {
             this._companyList = new List<Company>();
             {
@@ -42,10 +51,14 @@ namespace Kpo4381.Lib
                 _companyList.Add(company);
             }
         }
-
-        private readonly string _dataFileName = "";
-        private List<Company> _companyList = null;
-        private LoadStatus _status = LoadStatus.None;
+        public void SetOnStatusChanged(Delegates.OnStatusChangedDelegate onStatusChanged)
+        {
+            this.onStatusChanged = onStatusChanged;
+        }
+        public Delegates.OnStatusChangedDelegate OnStatusChanged
+        {
+            get { return onStatusChanged; }
+        }
         public LoadStatus status
         {
             get { return _status; }

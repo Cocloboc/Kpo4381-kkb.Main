@@ -18,35 +18,43 @@ namespace Kpo4381.Lib
     }
     public class CompanyListSplitFileLoader : ICompanyListLoader
     {
+        public Delegates.OnStatusChangedDelegate OnStatusChangedDelegate;
         private readonly string _dataFileName = null;
         private List<Company> _companyList = null;
+        private Delegates.OnStatusChangedDelegate onStatusChanged = null;
+
+        public void SetOnStatusChanged(Delegates.OnStatusChangedDelegate onStatusChanged)
+        {
+            this.onStatusChanged = onStatusChanged;
+        }
+        public Delegates.OnStatusChangedDelegate OnStatusChanged
+        {
+            get { return onStatusChanged; }
+        }
         public List<Company> CompanyList
         {
             get { return _companyList; }
         }
 
-        private LoadStatus _status = LoadStatus.None;
-        public LoadStatus status
-        {
-            get { return _status; }
-        }
+        public LoadStatus status { get; private set; } = LoadStatus.None;
 
         public CompanyListSplitFileLoader()
         {
             _companyList = new List<Company>();
             _dataFileName = AppGlobalSettings.DataFileName;
-            ReadFile();
         }
-        private void ReadFile()
+        public void ReadFile()
         {
             if (_dataFileName == null)
             {
-                _status = LoadStatus.FileNameIsEmpty;
+                status = LoadStatus.FileNameIsEmpty;
+                onStatusChanged?.Invoke(status);
                 throw new Exception("Отсутсвует имя файла");
             }
             if (!File.Exists(_dataFileName))
             {
-                _status = LoadStatus.FileNotExists;
+                status = LoadStatus.FileNotExists;
+                onStatusChanged?.Invoke(status);
                 throw new Exception("Файл не существует");
             }
             string[] companees = File.ReadAllLines(_dataFileName);
@@ -62,10 +70,14 @@ namespace Kpo4381.Lib
                 }
             }
             if (_companyList.Count > 0)
-                _status = LoadStatus.Success;
+            {
+                status = LoadStatus.Success;
+                onStatusChanged?.Invoke(status);
+            }
             else
             {
-                _status = LoadStatus.GeneralError;
+                status = LoadStatus.GeneralError;
+                onStatusChanged?.Invoke(status);
                 throw new Exception("Файл содержит некорректные данные");
             }
         }
