@@ -38,7 +38,6 @@ namespace Kpo4381.kkb.Main
         {
             try
             {
-                //ICompanyListLoader loader = new CompanyListSplitFileLoader(AppGlobalSettings.DataFileName);
                 ICompanyListLoader loader = IoCLoader.container.Resolve<ICompanyListLoader>();
                 loader.ReadFile();
                 companyList = loader.CompanyList;
@@ -67,8 +66,7 @@ namespace Kpo4381.kkb.Main
 
         private void mmSettings_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("logPath: " + AppGlobalSettings.LogPath + " DataFilePath: " + AppGlobalSettings.DataFileName);
-            MessageBox.Show(IoCLoader.container.Resolve<ICompanyListLoader>().OnStatusChanged.ToString());
+            MessageBox.Show("logPath: " + AppGlobalSettings.LogPath + " DataFilePath: " + AppGlobalSettings.DataFileName);
         }
     }
 }

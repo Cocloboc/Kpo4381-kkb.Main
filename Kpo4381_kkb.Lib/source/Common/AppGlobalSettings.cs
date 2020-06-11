@@ -11,6 +11,7 @@ namespace Kpo4381.Lib
     {
         private  static string _logPath = null;
         private static string _dataFileName = null;
+        private static string _dataJsonFileName = null;
         private static string _saveFileName = null;
         private static string _companyFactory = null;
 
@@ -22,6 +23,10 @@ namespace Kpo4381.Lib
         public static string DataFileName
         {
             get { return _dataFileName; }
+        }
+        public static string DataJsonFileName
+        {
+            get { return _dataJsonFileName; }
         }
 
         public static string SaveFileName
@@ -41,6 +46,7 @@ namespace Kpo4381.Lib
             _dataFileName = util.AppSettings("dataFileName");
             _saveFileName = util.AppSettings("saveFileName");
             _companyFactory = util.AppSettings("companyFactory");
+            _dataJsonFileName = util.AppSettings("dataJsonFileName");
         }
 
     }

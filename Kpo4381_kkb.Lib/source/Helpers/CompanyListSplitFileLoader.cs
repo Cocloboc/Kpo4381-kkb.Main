@@ -41,7 +41,7 @@ namespace Kpo4381.Lib
         public CompanyListSplitFileLoader()
         {
             _companyList = new List<Company>();
-            _dataFileName = AppGlobalSettings.DataFileName;
+            _dataFileName = AppGlobalSettings.DataFileName == "" ? AppGlobalSettings.DataFileName : "C:/Users/kirbe/source/repos/Kpo4381_kkb.Main/Kpo4381_kkb.Main/bin/Debug/Company.txt";
         }
         public void ReadFile()
         {
@@ -82,7 +82,7 @@ namespace Kpo4381.Lib
             }
         }
 
-        private Company tryConvertString(string row)
+        public Company tryConvertString(string row)
         {
             string[] companyParams = row.Split('|');
             if (companyParams.Length < 4)

@@ -52,7 +52,7 @@
             this.mmSettings});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "MMenu";
             // 
@@ -62,7 +62,7 @@
             this.nmExit,
             this.mnOpen});
             this.mmFile.Name = "mmFile";
-            this.mmFile.Size = new System.Drawing.Size(70, 26);
+            this.mmFile.Size = new System.Drawing.Size(70, 24);
             this.mmFile.Text = "1&.Файл";
             // 
             // nmExit
@@ -84,7 +84,7 @@
             this.mmCompany.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnOpenCompany});
             this.mmCompany.Name = "mmCompany";
-            this.mmCompany.Size = new System.Drawing.Size(107, 26);
+            this.mmCompany.Size = new System.Drawing.Size(107, 24);
             this.mmCompany.Text = "2&.Компании";
             // 
             // mnOpenCompany
@@ -97,17 +97,25 @@
             // mmSettings
             // 
             this.mmSettings.Name = "mmSettings";
-            this.mmSettings.Size = new System.Drawing.Size(109, 26);
+            this.mmSettings.Size = new System.Drawing.Size(109, 24);
             this.mmSettings.Text = "3&.Настройки";
             this.mmSettings.Click += new System.EventHandler(this.mmSettings_Click);
             // 
             // dgvCompanies
             // 
+            this.dgvCompanies.AllowUserToAddRows = false;
+            this.dgvCompanies.AllowUserToDeleteRows = false;
+            this.dgvCompanies.AllowUserToResizeColumns = false;
+            this.dgvCompanies.AllowUserToResizeRows = false;
+            this.dgvCompanies.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCompanies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompanies.Location = new System.Drawing.Point(12, 31);
             this.dgvCompanies.Name = "dgvCompanies";
+            this.dgvCompanies.ReadOnly = true;
+            this.dgvCompanies.RowHeadersVisible = false;
             this.dgvCompanies.RowHeadersWidth = 51;
             this.dgvCompanies.RowTemplate.Height = 24;
+            this.dgvCompanies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCompanies.Size = new System.Drawing.Size(776, 407);
             this.dgvCompanies.TabIndex = 1;
             // 
@@ -116,16 +124,16 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoadFileStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 447);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 24);
+            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // LoadFileStatusLabel
             // 
             this.LoadFileStatusLabel.Name = "LoadFileStatusLabel";
-            this.LoadFileStatusLabel.Size = new System.Drawing.Size(0, 18);
+            this.LoadFileStatusLabel.Size = new System.Drawing.Size(0, 16);
             // 
             // FrmMain
             // 

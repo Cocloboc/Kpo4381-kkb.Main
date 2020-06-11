@@ -29,6 +29,12 @@ namespace Kpo4381.Lib
                         .ImplementedBy<CompanyListSplitFileLoader>()
                         .LifeStyle.Singleton);
                     break;
+                case ("json"):
+                    container.Register(Component
+                        .For<ICompanyListLoader>()
+                        .ImplementedBy<CompanyListJsonLoader>()
+                        .LifeStyle.Singleton);
+                    break;
                 default:
                     container.Register(Component
                         .For<ICompanyListLoader>()
