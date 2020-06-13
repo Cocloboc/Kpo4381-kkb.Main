@@ -22,7 +22,13 @@ namespace Kpo4381.kkb.Main
         {          
             InitializeComponent();
             IoCLoader.container.Resolve<ICompanyListLoader>().SetOnStatusChanged(updateStatusLabel);
+            UpdateCatData();
 
+        }
+
+        private void UpdateCatData()
+        {
+            CatsTextBox.Text = CompanyUtils.GetCompleteInfo();
         }
 
         private void nmExit_Click(object sender, EventArgs e)
@@ -67,6 +73,11 @@ namespace Kpo4381.kkb.Main
         private void mmSettings_Click(object sender, EventArgs e)
         {
             MessageBox.Show("logPath: " + AppGlobalSettings.LogPath + " DataFilePath: " + AppGlobalSettings.DataFileName);
+        }
+
+        private void UpdateDataTimer_Tick(object sender, EventArgs e)
+        {
+            UpdateCatData();
         }
     }
 }

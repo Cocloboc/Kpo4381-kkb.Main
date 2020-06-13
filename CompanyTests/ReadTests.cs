@@ -30,5 +30,6 @@ namespace CompanyTests
             Assert.AreEqual(loader.CompanyList[0].MarketShare, TestCompany.MarketShare);
         }
 
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.nmExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,8 @@
             this.dgvCompanies = new System.Windows.Forms.DataGridView();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LoadFileStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.CatsTextBox = new System.Windows.Forms.RichTextBox();
+            this.UpdateDataTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompanies)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -124,7 +127,7 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LoadFileStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 449);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 507);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 2;
@@ -135,11 +138,27 @@
             this.LoadFileStatusLabel.Name = "LoadFileStatusLabel";
             this.LoadFileStatusLabel.Size = new System.Drawing.Size(0, 16);
             // 
+            // CatsTextBox
+            // 
+            this.CatsTextBox.Location = new System.Drawing.Point(12, 444);
+            this.CatsTextBox.Name = "CatsTextBox";
+            this.CatsTextBox.ReadOnly = true;
+            this.CatsTextBox.Size = new System.Drawing.Size(776, 56);
+            this.CatsTextBox.TabIndex = 3;
+            this.CatsTextBox.Text = "";
+            // 
+            // UpdateDataTimer
+            // 
+            this.UpdateDataTimer.Enabled = true;
+            this.UpdateDataTimer.Interval = 10000;
+            this.UpdateDataTimer.Tick += new System.EventHandler(this.UpdateDataTimer_Tick);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 471);
+            this.ClientSize = new System.Drawing.Size(800, 529);
+            this.Controls.Add(this.CatsTextBox);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dgvCompanies);
             this.Controls.Add(this.menuStrip1);
@@ -168,6 +187,8 @@
         private System.Windows.Forms.ToolStripMenuItem mmSettings;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel LoadFileStatusLabel;
+        private System.Windows.Forms.RichTextBox CatsTextBox;
+        private System.Windows.Forms.Timer UpdateDataTimer;
     }
 }
 

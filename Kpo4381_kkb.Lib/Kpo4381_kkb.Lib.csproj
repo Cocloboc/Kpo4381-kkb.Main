@@ -59,6 +59,7 @@
     <Compile Include="source\Helpers\CompanyTestListSaver.cs" />
     <Compile Include="source\Helpers\CompanyListSplitFileLoader.cs" />
     <Compile Include="source\Helpers\CompanyTestListLoader.cs" />
+    <Compile Include="source\Helpers\CompanyUtils.cs" />
     <Compile Include="source\Helpers\ICompanyListLoader.cs" />
     <Compile Include="source\Helpers\ICompanyListSaver.cs" />
     <Compile Include="source\Helpers\IoCLoader.cs" />
