@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.Lib
 {
-    public class CompanyListSplitFileSaver : ICompanyListSaver
+    internal class CompanyListSplitFileSaver : ICompanyListSaver
     {
         public CompanyListSplitFileSaver()
         {

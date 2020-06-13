@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Kpo4381.kkb.Lib.source.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -59,7 +60,7 @@ namespace Kpo4381.Lib
             {                 
                 status = LoadStatus.GeneralError;
                 onStatusChanged?.Invoke(status);
-                throw new Exception("Файл содержит некорректные данные");
+                throw new FileInvalidException();
             }
             else
             {

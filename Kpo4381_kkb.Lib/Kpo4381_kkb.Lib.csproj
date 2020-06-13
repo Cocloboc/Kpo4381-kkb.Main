@@ -67,6 +67,7 @@
     <Compile Include="source\Log\LogUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="source\Model\Company.cs" />
+    <Compile Include="source\Model\FileInvalidException.cs" />
     <Compile Include="source\Utility\AppConfigUtility.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kpo4381.Lib
 {
-    public class CompanyTestListLoader : ICompanyListLoader
+    internal class CompanyTestListLoader : ICompanyListLoader
     {
         public CompanyTestListLoader(Delegates.OnStatusChangedDelegate onStatusChanged)
         {
